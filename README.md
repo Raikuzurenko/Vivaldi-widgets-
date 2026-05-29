@@ -1,7 +1,7 @@
 # Vivaldi Widgets:
 Sup, these are some widgets i made ( vibe coded, I'm lazy) I'll try me best to make the setup process as clear as I can, I just do this for fun so don't expect anything professional and bear with me, I'm literally looking up tutorials to learn how to format this instruction readme thing :P
 
-## the following are the widgets included 
+## The following are the widgets included 
 - Clock widget
 - Pixel day progress
 - Spotify widget
@@ -11,11 +11,38 @@ Sup, these are some widgets i made ( vibe coded, I'm lazy) I'll try me best to m
 Out of the 4 widgets the Clock and the Pixel day widget should work out of the box, the other 2 require some amount of set up.
 
 
+## Setup
 
-## Spotify widget
+The setup process for all the widgets are pretty much the same ( additional steps for the spotify and system resources) as they all involve loading the widgets as lets say a mini website in vivaldi. For simiplicty sake I'll use the clock widget as an example to explain the setup process.
+
+- ### Step 1 :P
+Download the widget( if that wasn't obvious)
+
+- ### Step 2
+copy the location of the widget, it should be soemthing like "/home/NAME/FOLDER/clock_widget.html"
+
+- ### Step 3
+Open vivaldi and click add widget and chosse the "***Webpage option***"
+
+
+
+
+
+
+
+
+After downloading the widgets I suggest making a dedicated folder for all the widgets so its easier to manage.
+
+
+## Spotify widget 
 
 ![widgetspotify](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/readme_ss/pasted%20file.png?raw=true)
 
 This widget consists of two main parts:
 
-- [the html file](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/spotify-widget.html)
+- [html file](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/spotify-widget.html)
+
+- [Local server](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/spotify-server.py)
+
+  
+V
