@@ -61,7 +61,7 @@ The widgets setup is similar, for this the only difference is that it is dependa
 
 ## System resources
 
-![image](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/readme_ss/2026-05-29_16-04-12.png?raw=true)
+![image](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/readme_ss/screenshot-1780059298.png?raw=true)
 
 The setup process for this widget is the exact same just do "python3 sys_stats.py" in a terminal
 
