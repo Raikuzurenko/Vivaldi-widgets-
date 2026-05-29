@@ -82,4 +82,17 @@ You could technically use it as mentioned but turning your system on and constan
 
 Don't forget to add cutom [css](https://github.com/Raikuzurenko/Vivaldi-widgets-/tree/main/vivaldi_dark/vivaldi_css) to obtain the exact result of my setup
 
+to add it just follow this guide I ripped of google
+
+To add custom CSS to Vivaldi, you need to enable the experimental CSS modifications feature and point the browser to a specific folder on your computer where your .css files are stored.
+
+### Step 1: Enable CSS Modifications
+Open Vivaldi and type vivaldi://experiments into the address bar.Find the option labeled "Allow for using CSS modifications" and check the box.Restart Vivaldi for the change to take effect.
+
+### Step 2: Prepare Your CSS Files
+Create a new folder on your computer (e.g., in your Documents or a dedicated "VivaldiMods" folder) to store your custom styles.Create a new text file inside this folder, rename it to something like custom.css, and paste your CSS code into it.Note: Vivaldi will automatically load every .css file it finds in this selected folder.
+
+### Step 3: Link the Folder to Vivaldi
+Open Vivaldi Settings (Ctrl+F12 or Command+,).Navigate to the Appearance section.Scroll down to the Custom UI Modifications section.Click Select Folder (or "Add folder") and choose the folder you created in Step 2.Restart the browser once more to apply your custom styles.
+
 
