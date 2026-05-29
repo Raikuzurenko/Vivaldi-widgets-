@@ -1,4 +1,5 @@
 # Vivaldi Widgets:
+Sup, these are some widgets i made ( vibe coded, I'm lazy) I'll try me best to make the setup process as clear as I can, I just do this for fun so don't expect anything professional and bear with me, I'm literally looking up tutorials to learn how to format this instruction readme thing :P
 
 ## the following are the widgets included 
 - Clock widget
@@ -12,6 +13,6 @@ Out of the 4 widgets the Clock and the Pixel day widget should work out of the b
 
 
 **Spotify Widget** 
-![widgetspotify](vivaldi_dark/readme_ss/pasted file.png)
+! [widgetspotify](vivaldi_dark/readme_ss/pasted file.png)
 
 
