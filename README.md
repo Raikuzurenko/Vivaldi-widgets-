@@ -1,4 +1,6 @@
 # Vivaldi Widgets:
+
+## the following are the widgets included 
 - Clock widget
 - Pixel day progress
 - Spotify widget
