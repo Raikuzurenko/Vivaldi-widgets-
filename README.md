@@ -37,8 +37,11 @@ Paste the location in the box and click done, ***MAGIC!***
 
 
 
-####Tips with Rai: After downloading the widgets I suggest making a dedicated folder for all the widgets so its easier to manage.####
+#### Tips with Rai: After downloading the widgets I suggest making a dedicated folder for all the widgets so its easier to manage.
 
+
+
+# Spotify and system resources
 
 ## Spotify widget 
 
@@ -51,4 +54,10 @@ This widget consists of two main parts:
 - [Local server](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/spotify-server.py)
 
   
-V
+The widgets setup is similar, for this the only difference is that it is dependant on the local server for it's info, to set up the local server, open a termianl and change directory to where the spotify-server.py file is and execute the following command "python3 -m http.server 8000" and it should work
+
+### Note this widget gets it's information from playerctl
+
+
+## System resources
+
