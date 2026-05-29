@@ -78,3 +78,8 @@ The setup process for this widget is the exact same just do "python3 sys_stats.p
 You could technically use it as mentioned but turning your system on and constantly running the python command is annoying so I suggest making an sh file then making it executable and running it on startup ( just ask Chat GPT how to do that), I've linked my [sh](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/start_widgets.sh) file just modify it with your directory :)
 
 
+## Add custom CSS
+
+Don't forget to add cutom [css](https://github.com/Raikuzurenko/Vivaldi-widgets-/tree/main/vivaldi_dark/vivaldi_css) to obtain the exact result of my setup
+
+
