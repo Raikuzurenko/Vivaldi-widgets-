@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>System HUD</title>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    background: #000;
+    width: 300px; /* matches your clock widget */
+    overflow: hidden;
+  }
+
+  body {
+    font-family: 'Press Start 2P', cursive;
+    color: #e8e8e8;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    image-rendering: pixelated;
+  }
+
+  canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  #title {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    line-height: 1.6;
+    padding: 8px 0;
+    border-bottom: 1px solid #111;
+    position: relative;
+    z-index: 1;
+  }
+
+  .label {
+    color: #666;
+  }
+
+  .value {
+    color: #e8e8e8;
+  }
+</style>
+</head>
+
+<body>
+
+<canvas id="rain"></canvas>
+
+<div id="title">SYSTEM STATUS</div>
+
+<div class="row">
+  <div class="label">CPU</div>
+  <div class="value" id="cpu">--%</div>
+</div>
+
+<div class="row">
+  <div class="label">RAM</div>
+  <div class="value" id="ram">--%</div>
+</div>
+
+<script>
+const API = "http://127.0.0.1:8787/stats";
+
+async function update() {
+  try {
+    const res = await fetch(API);
+    const data = await res.json();
+
+    document.getElementById('cpu').textContent =
+      (data.cpu ?? "--") + '%';
+
+    document.getElementById('ram').textContent =
+      (data.ram ?? "--") + '%';
+
+  } catch (e) {
+    document.getElementById('cpu').textContent = "--%";
+    document.getElementById('ram').textContent = "--%";
+  }
+}
+
+update();
+setInterval(update, 2000);
+</script>
+
+<script>
+const canvas = document.getElementById("rain");
+const ctx = canvas.getContext("2d");
+
+function resize() {
+  canvas.width = 300;
+  canvas.height = document.body.offsetHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+const cols = 18;
+const drops = new Array(cols).fill(0);
+
+function draw() {
+  ctx.fillStyle = "rgba(0,0,0,0.18)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = "rgba(140, 220, 255, 0.75)";
+  ctx.font = "8px 'Press Start 2P'";
+
+  const spacing = canvas.width / cols;
+
+  for (let i = 0; i < cols; i++) {
+    const x = i * spacing;
+    const y = drops[i] * 12;
+
+    ctx.fillText("·", x, y);
+
+    if (y > canvas.height && Math.random() > 0.975) {
+      drops[i] = 0;
+    }
+
+    drops[i]++;
+  }
+}
+
+setInterval(draw, 60);
+</script>
+
+</body>
+</html>

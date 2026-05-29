@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clock</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            background: #000 !important;
+            width: 300px;
+        }
+
+        body {
+            font-family: 'Share Tech Mono', monospace;
+            color: #e8e8e8;
+            padding: 16px;
+            image-rendering: pixelated;
+        }
+
+        /* ── Scanlines ── */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent,
+                transparent 2px,
+                rgba(0,0,0,0.07) 2px,
+                rgba(0,0,0,0.07) 4px
+            );
+            pointer-events: none;
+            z-index: 99;
+        }
+
+        /* ── Main layout ── */
+        #main {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        /* ── Time + Date ── */
+        #left {
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding-top: 2px;
+        }
+
+        #time {
+            font-family: 'VT323', monospace;
+            font-size: 54px;
+            color: #e8e8e8;
+            letter-spacing: 2px;
+            line-height: 1;
+            text-shadow: 2px 2px 0px #000, 0 0 14px rgba(232,232,232,0.08);
+        }
+
+        #ampm {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: #555;
+            margin-top: -2px;
+        }
+
+        #day-name {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: #e8e8e8;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        /* DATE NOW PURE WHITE */
+        #date-line {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        /* ── Divider ── */
+        #divider {
+            width: 1px;
+            background: #1a1a1a;
+            align-self: stretch;
+            flex-shrink: 0;
+        }
+
+        /* ── Calendar ── */
+        #cal {
+            flex: 1;
+            min-width: 0;
+        }
+
+        #cal-header {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 2px;
+            color: #e8e8e8;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+
+        #cal-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            text-align: center;
+        }
+
+        .cal-day-name {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 7px;
+            color: #383838;
+            padding: 1px 0 3px;
+        }
+
+        .cal-cell {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 8px;
+            color: #333;
+            padding: 2px 1px;
+            line-height: 1;
+            cursor: default;
+        }
+
+        .cal-cell.cur-month {
+            color: #888;
+        }
+
+        .cal-cell.today {
+            color: #000;
+            background: #e8e8e8;
+            border-radius: 2px;
+        }
+
+        /* blinking colon */
+        .blink {
+            animation: blink 1s step-start infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.1; }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+
+        <!-- CLOCK LEFT -->
+        <div id="left">
+            <div id="time">12<span class="blink">:</span>00</div>
+            <div id="ampm">AM</div>
+            <div id="day-name">MONDAY</div>
+            <div id="date-line">01 JAN 2026</div>
+        </div>
+
+        <div id="divider"></div>
+
+        <!-- CALENDAR RIGHT -->
+        <div id="cal">
+            <div id="cal-header">— — —</div>
+            <div id="cal-grid"></div>
+        </div>
+
+    </div>
+
+    <script>
+        const MONTHS_SHORT = [
+            'JAN','FEB','MAR','APR','MAY','JUN',
+            'JUL','AUG','SEP','OCT','NOV','DEC'
+        ];
+
+        const DAYS = [
+            'SUNDAY','MONDAY','TUESDAY','WEDNESDAY',
+            'THURSDAY','FRIDAY','SATURDAY'
+        ];
+
+        const DAYS_SHORT = ['S','M','T','W','T','F','S'];
+
+        function buildCalendar(now) {
+            const year = now.getFullYear();
+            const month = now.getMonth();
+            const today = now.getDate();
+
+            document.getElementById('cal-header').textContent =
+                MONTHS_SHORT[month] + ' ' + year;
+
+            const grid = document.getElementById('cal-grid');
+            grid.innerHTML = '';
+
+            DAYS_SHORT.forEach(d => {
+                const el = document.createElement('div');
+                el.className = 'cal-day-name';
+                el.textContent = d;
+                grid.appendChild(el);
+            });
+
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const daysInPrev = new Date(year, month, 0).getDate();
+
+            for (let i = firstDay - 1; i >= 0; i--) {
+                const el = document.createElement('div');
+                el.className = 'cal-cell';
+                el.textContent = daysInPrev - i;
+                grid.appendChild(el);
+            }
+
+            for (let d = 1; d <= daysInMonth; d++) {
+                const el = document.createElement('div');
+                el.className = 'cal-cell cur-month' + (d === today ? ' today' : '');
+                el.textContent = d;
+                grid.appendChild(el);
+            }
+
+            const total = firstDay + daysInMonth;
+            const trailing = total % 7 === 0 ? 0 : 7 - (total % 7);
+
+            for (let d = 1; d <= trailing; d++) {
+                const el = document.createElement('div');
+                el.className = 'cal-cell';
+                el.textContent = d;
+                grid.appendChild(el);
+            }
+        }
+
+        let lastMonth = -1;
+
+        function update() {
+            const now = new Date();
+            const month = now.getMonth();
+
+            // 12 HOUR FORMAT
+            let h = now.getHours();
+            const m = now.getMinutes();
+            const ampm = h >= 12 ? 'PM' : 'AM';
+            h = h % 12 || 12;
+
+            document.getElementById('time').innerHTML =
+                String(h).padStart(2,'0') +
+                '<span class="blink">:</span>' +
+                String(m).padStart(2,'0');
+
+            document.getElementById('ampm').textContent = ampm;
+            document.getElementById('day-name').textContent = DAYS[now.getDay()];
+
+            document.getElementById('date-line').textContent =
+                String(now.getDate()).padStart(2,'0') + ' ' +
+                MONTHS_SHORT[month] + ' ' +
+                now.getFullYear();
+
+            if (month !== lastMonth) {
+                buildCalendar(now);
+                lastMonth = month;
+            }
+        }
+
+        update();
+        setInterval(update, 1000);
+    </script>
+</body>
+</html>

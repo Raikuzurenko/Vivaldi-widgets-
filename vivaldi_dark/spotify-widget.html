@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Now Playing</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      width: 320px;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: blur(40px) brightness(0.3) saturate(2);
+      transform: scale(1.2);
+      z-index: 0;
+      transition: background-image 1s ease;
+    }
+
+    #content {
+      position: relative;
+      z-index: 1;
+      padding: 16px;
+    }
+
+    #top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    #art-wrap {
+      flex-shrink: 0;
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+      border: 2px solid rgba(255,255,255,0.15);
+      animation: spin 8s linear infinite;
+      animation-play-state: paused;
+    }
+
+    #art-wrap.playing {
+      animation-play-state: running;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    #album-art {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      image-rendering: high-quality;
+    }
+
+    #info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    #track-name {
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #fff;
+      letter-spacing: -0.2px;
+    }
+
+    #artist-name {
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      margin-top: 3px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    #spotify-icon {
+      width: 18px;
+      height: 18px;
+      opacity: 0.7;
+      flex-shrink: 0;
+    }
+
+    #controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .ctrl-btn {
+      background: rgba(255,255,255,0.08);
+      border: 1.5px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+      color: rgba(255,255,255,0.8);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, transform 0.1s;
+    }
+
+    .ctrl-btn:hover {
+      background: rgba(255,255,255,0.18);
+      color: #fff;
+    }
+
+    .ctrl-btn:active {
+      transform: scale(0.92);
+    }
+
+    .ctrl-btn.sm {
+      width: 36px;
+      height: 36px;
+    }
+
+    .ctrl-btn.lg {
+      width: 46px;
+      height: 46px;
+      background: #1DB954;
+      border-color: #1DB954;
+      color: #000;
+    }
+
+    .ctrl-btn.lg:hover {
+      background: #1ed760;
+    }
+
+    .ctrl-btn svg {
+      display: block;
+    }
+
+    #nothing {
+      padding: 28px;
+      text-align: center;
+      color: #444;
+      font-size: 13px;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="bg"></div>
+
+  <div id="content">
+    <div id="top">
+      <div id="art-wrap">
+        <img id="album-art" alt="Album art" src="" />
+      </div>
+
+      <div id="info">
+        <div id="track-name">Loading...</div>
+        <div id="artist-name"></div>
+      </div>
+
+      <svg id="spotify-icon" viewBox="0 0 24 24" fill="#1DB954">
+        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.623.623 0 0 1-.857.208c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 1 1-.277-1.215c3.809-.87 7.077-.496 9.712 1.115a.623.623 0 0 1 .207.856zm1.223-2.722a.78.78 0 0 1-1.072.257c-2.687-1.652-6.785-2.131-9.965-1.166a.78.78 0 0 1-.973-.519.781.781 0 0 1 .52-.972c3.632-1.102 8.147-.568 11.233 1.328a.78.78 0 0 1 .257 1.072zm.105-2.835C14.692 8.95 9.375 8.775 6.297 9.71a.937.937 0 1 1-.543-1.793c3.532-1.072 9.404-.865 13.115 1.338a.937.937 0 0 1-.955 1.612z"/>
+      </svg>
+    </div>
+
+    <div id="controls">
+      <button class="ctrl-btn sm" onclick="cmd('previous')" title="Previous">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/>
+        </svg>
+      </button>
+
+      <button class="ctrl-btn lg" id="play-btn" onclick="cmd('play-pause')" title="Play/Pause">
+        <svg id="play-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+
+        <svg id="pause-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display:none">
+          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+        </svg>
+      </button>
+
+      <button class="ctrl-btn sm" onclick="cmd('next')" title="Next">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M6 18l8.5-6L6 6v12zm2-8.14 5.02 2.14L8 14.14V9.86zM16 6h2v12h-2z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="nothing">Nothing playing right now</div>
+
+  <script>
+    let lastArt = '';
+
+    async function cmd(action) {
+      await fetch('http://127.0.0.1:8765/cmd?action=' + action);
+      setTimeout(update, 300);
+    }
+
+    async function update() {
+      try {
+        const r = await fetch('http://127.0.0.1:8765');
+        const d = await r.json();
+
+        if (!d.title || d.status === 'Stopped') {
+          document.getElementById('content').style.display = 'none';
+          document.getElementById('nothing').style.display = 'block';
+          document.getElementById('art-wrap').classList.remove('playing');
+          return;
+        }
+
+        document.getElementById('content').style.display = 'block';
+        document.getElementById('nothing').style.display = 'none';
+
+        document.getElementById('track-name').textContent = d.title;
+        document.getElementById('artist-name').textContent = d.artist;
+
+        if (d.art && d.art !== lastArt) {
+          lastArt = d.art;
+          document.getElementById('album-art').src = d.art;
+          document.getElementById('bg').style.backgroundImage = `url('${d.art}')`;
+        }
+
+        const playing = d.status === 'Playing';
+
+        document.getElementById('play-icon').style.display = playing ? 'none' : 'block';
+        document.getElementById('pause-icon').style.display = playing ? 'block' : 'none';
+
+        const wrap = document.getElementById('art-wrap');
+        if (playing) wrap.classList.add('playing');
+        else wrap.classList.remove('playing');
+
+      } catch(e) {
+        document.getElementById('track-name').textContent = 'Server not running';
+        document.getElementById('artist-name').textContent = 'Run: python3 ~/spotify-server.py';
+      }
+    }
+
+    update();
+    setInterval(update, 3000);
+  </script>
+</body>
+</html>
