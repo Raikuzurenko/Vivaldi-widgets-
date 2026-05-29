@@ -1,0 +1,6 @@
+.dashboard-widget.Dashboard-Webpage .url-wrapper,
+.dashboard-widget.Dashboard-Webpage h1.title span {
+    display: none !important;
+}
+
+
