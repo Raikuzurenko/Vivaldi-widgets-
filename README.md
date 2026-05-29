@@ -19,13 +19,16 @@ The setup process for all the widgets are pretty much the same ( additional step
 Download the widget( if that wasn't obvious)
 
 - ### Step 2
-copy the location of the widget, it should be soemthing like "/home/NAME/FOLDER/clock_widget.html"
+Copy the location of the widget, it should be soemthing like "/home/NAME/FOLDER/clock_widget.html"
 
 - ### Step 3
 Open vivaldi and click add widget and chosse the "***Webpage option***"
 
 ![image](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/readme_ss/2026-05-29_16-48-27.png?raw=true)
+![image](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/readme_ss/2026-05-29_17-15-35.png?raw=true)
 
+-### Step 4
+Paste the location in the box and click done, ***MAGIC!***
 
 
 
