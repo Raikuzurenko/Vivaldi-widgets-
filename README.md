@@ -1,5 +1,5 @@
 # The following widgets in this repo are:
-- [clock widget]
+- Clock widget
 2-Pixel day progress
 3-Spotify widget
 4-System resources
