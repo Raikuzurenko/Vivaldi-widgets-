@@ -56,7 +56,7 @@ This widget consists of two main parts:
 - [Local server](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/spotify-server.py)
 
   
-The widgets setup is similar, for this the only difference is that it is dependant on the local server for it's info, to set up the local server, open a termianl and change directory to where the spotify-server.py file is and execute the following command "python3 spotify-server.py" and it should work
+The widgets setup is similar, for this the only difference is that it is dependant on the local server for it's info, to set up the local server, open a terminal and change directory to where the spotify-server.py file is and execute the following command "python3 spotify-server.py" and it should work
 
 ### Note this widget gets it's information from playerctl so install it if not present
 
@@ -97,7 +97,7 @@ Create a new folder on your computer (e.g., in your Documents or a dedicated "Vi
 ### Step 3: Link the Folder to Vivaldi
 Open Vivaldi Settings (Ctrl+F12 or Command+,).Navigate to the Appearance section.Scroll down to the Custom UI Modifications section.Click Select Folder (or "Add folder") and choose the folder you created in Step 2.Restart the browser once more to apply your custom styles.
 
-### Note: Once you add the CSS the setting option on the widgets will not be visible, they are there just click on it and youll eventually hit it :P
+### Note: Once you add the CSS, the setting option on the widgets will not be visible, they are there just click on it and youll eventually hit it :P
 I
 ## Dancing girl widget(idk if anyone wants this :P)
 
