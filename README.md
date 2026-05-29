@@ -27,16 +27,17 @@ Open vivaldi and click add widget and chosse the "***Webpage option***"
 ![image](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/readme_ss/2026-05-29_16-48-27.png?raw=true)
 ![image](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/readme_ss/2026-05-29_17-15-35.png?raw=true)
 
--### Step 4
+- ### Step 4
 Paste the location in the box and click done, ***MAGIC!***
 
+![iamge](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/readme_ss/2026-05-29_17-15-47.png?raw=true)
 
 
 
 
 
 
-After downloading the widgets I suggest making a dedicated folder for all the widgets so its easier to manage.
+####Tips with Rai: After downloading the widgets I suggest making a dedicated folder for all the widgets so its easier to manage.####
 
 
 ## Spotify widget 
