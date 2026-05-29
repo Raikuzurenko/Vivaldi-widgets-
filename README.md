@@ -1,4 +1,4 @@
-# The following widgets in this repo are:
+# Vivaldi Widgets:
 - Clock widget
 - Pixel day progress
 - Spotify widget
