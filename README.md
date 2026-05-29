@@ -24,6 +24,8 @@ copy the location of the widget, it should be soemthing like "/home/NAME/FOLDER/
 - ### Step 3
 Open vivaldi and click add widget and chosse the "***Webpage option***"
 
+(https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/readme_ss/2026-05-29_16-48-27.png?raw=true)
+
 
 
 
@@ -36,7 +38,7 @@ After downloading the widgets I suggest making a dedicated folder for all the wi
 
 ## Spotify widget 
 
-![widgetspotify](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/readme_ss/pasted%20file.png?raw=true)
+![widgetspotify](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/readme_ss/2026-05-29_16-04-12.png?raw=true)
 
 This widget consists of two main parts:
 
