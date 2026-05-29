@@ -54,10 +54,27 @@ This widget consists of two main parts:
 - [Local server](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/spotify-server.py)
 
   
-The widgets setup is similar, for this the only difference is that it is dependant on the local server for it's info, to set up the local server, open a termianl and change directory to where the spotify-server.py file is and execute the following command "python3 -m http.server 8000" and it should work
+The widgets setup is similar, for this the only difference is that it is dependant on the local server for it's info, to set up the local server, open a termianl and change directory to where the spotify-server.py file is and execute the following command "python3 spotify-server.py" and it should work
 
-### Note this widget gets it's information from playerctl
+### Note this widget gets it's information from playerctl so install it if not present
 
 
 ## System resources
+
+![image](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/readme_ss/2026-05-29_16-04-12.png?raw=true)
+
+The setup process for this widget is the exact same just do "python3 sys_stats.py" in a terminal
+
+
+### Note this widget gets its infomation from proc which is only on linux 
+
+
+
+
+
+
+## Run on startup
+
+You could technically use it as mentioned but turning your system on and constantly running the python command is annoying so I suggest making an sh file then making it executable and running it on startup ( just ask Chat GPT how to do that), I've linked my [sh](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/start_widgets.sh) file just modify it with your directory :)
+
 
