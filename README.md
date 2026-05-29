@@ -1,4 +1,4 @@
-#The following widgets in this repo are:
+# The following widgets in this repo are:
 -[clock widget]
 2-Pixel day progress
 3-Spotify widget
