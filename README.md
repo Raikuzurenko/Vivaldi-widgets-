@@ -24,7 +24,7 @@ copy the location of the widget, it should be soemthing like "/home/NAME/FOLDER/
 - ### Step 3
 Open vivaldi and click add widget and chosse the "***Webpage option***"
 
-(https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/readme_ss/2026-05-29_16-48-27.png?raw=true)
+![image](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/readme_ss/2026-05-29_16-48-27.png?raw=true)
 
 
 
