@@ -65,7 +65,7 @@ The widgets setup is similar, for this the only difference is that it is dependa
 
 ![image](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/readme_ss/screenshot-1780059298.png?raw=true)
 
-The setup process for this widget is the exact same just do "python3 sys_stats.py" in a terminal
+The setup process for this widget is the exact same as the spotify one just do "python3 sys_stats.py" in a terminal once you're in the direcotry where you saved the [local server](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/sys_stats.py)
 
 
 ### Note this widget gets its infomation from proc which is only on linux 
