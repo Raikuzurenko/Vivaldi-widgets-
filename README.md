@@ -10,6 +10,6 @@ Out of the 4 widgets the Clock and the Pixel day widget should work out of the b
 
 
 **Spotify Widget** 
-![widgetspotify](vivaldi-git/vivaldi_dark/readme_ss/pasted file.png)
+![widgetspotify](vivaldi_dark/readme_ss/pasted file.png)
 
 
