@@ -18,4 +18,4 @@ Out of the 4 widgets the Clock and the Pixel day widget should work out of the b
 
 This widget consists of two main parts:
 
-- [the html file](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/readme_ss/pasted%20file.png)
+- [the html file](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/spotify-widget.html)
