@@ -28,7 +28,9 @@ Open vivaldi and click add widget and chosse the "***Webpage option***"
 ![image](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/readme_ss/2026-05-29_17-15-35.png?raw=true)
 
 - ### Step 4
-Paste the location in the box and click done, ***MAGIC!***
+Paste the location in the box in the following format "file:///home/NAME/FOLDER/clock_widget.html" and click done, ***MAGIC!***
+
+### Note: Don't forget to add file:// before the location of the widget
 
 ![iamge](https://github.com/Raikuzurenko/Vivaldi-widgets-/blob/main/vivaldi_dark/readme_ss/2026-05-29_17-15-47.png?raw=true)
 
@@ -82,7 +84,7 @@ You could technically use it as mentioned but turning your system on and constan
 
 Don't forget to add cutom [css](https://github.com/Raikuzurenko/Vivaldi-widgets-/tree/main/vivaldi_dark/vivaldi_css) to obtain the exact result of my setup
 
-to add it just follow this guide I ripped of google
+To add it just follow this guide I ripped of google
 
 To add custom CSS to Vivaldi, you need to enable the experimental CSS modifications feature and point the browser to a specific folder on your computer where your .css files are stored.
 
@@ -94,5 +96,14 @@ Create a new folder on your computer (e.g., in your Documents or a dedicated "Vi
 
 ### Step 3: Link the Folder to Vivaldi
 Open Vivaldi Settings (Ctrl+F12 or Command+,).Navigate to the Appearance section.Scroll down to the Custom UI Modifications section.Click Select Folder (or "Add folder") and choose the folder you created in Step 2.Restart the browser once more to apply your custom styles.
+
+### Note: Once you add the CSS the setting option on the widgets will not be visible, they are there just click on it and youll eventually hit it :P
+I
+## Dancing girl widget(idk if anyone wants this :P)
+
+Um the setup for this is similar and kinda stupid, just open a terminal and go into the folder where you've downloaded your GIF and just start a python web server that serves the download folder (or if you wanna be safer make another folder for this GIF only and serve that) by executing the command " python3 -m http.server 8000" just change the port to any free port and in the file box paste "http://127.0.0.1:8000/dance.gif" replace the 8000 port number with your port that you chose earlier  and the "dance.gif" in the command with whatever name you saved the GIF as, you can also make it display images or videos , upto you lol. you could just ask chat gpt on how to make it auto start or just do what I do and start it every now and then whenever it breaks, its a janky setup but im lazy lowekey, regardless good luck if you have any problems do ask and ill try and help as much as possible :)
+
+
+
 
 
