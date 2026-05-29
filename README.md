@@ -101,7 +101,9 @@ Open Vivaldi Settings (Ctrl+F12 or Command+,).Navigate to the Appearance section
 I
 ## Dancing girl widget(idk if anyone wants this :P)
 
-Um the setup for this is similar and kinda stupid, just open a terminal and go into the folder where you've downloaded your GIF and just start a python web server that serves the download folder (or if you wanna be safer make another folder for this GIF only and serve that) by executing the command " python3 -m http.server 8000" just change the port to any free port and in the file box paste "http://127.0.0.1:8000/dance.gif" replace the 8000 port number with your port that you chose earlier  and the "dance.gif" in the command with whatever name you saved the GIF as, you can also make it display images or videos , upto you lol. you could just ask chat gpt on how to make it auto start or just do what I do and start it every now and then whenever it breaks, its a janky setup but im lazy lowekey, regardless good luck if you have any problems do ask and ill try and help as much as possible :)
+Um the setup for this is similar and kinda stupid, just open a terminal and go into the folder where you've downloaded your GIF and just start a python web server that serves the download folder (or if you wanna be safer make another folder for this GIF only and serve that) by executing the command 
+"python3 -m http.server 8000"
+just change the port to any free port and in the file box paste "http://127.0.0.1:8000/dance.gif" replace the 8000 port number with your port that you chose earlier  and the "dance.gif" in the command with whatever name you saved the GIF as, you can also make it display images or videos , upto you lol. you could just ask chat gpt on how to make it auto start or just do what I do and start it every now and then whenever it breaks, its a janky setup but im lazy lowekey, regardless good luck if you have any problems, do ask and ill try and help as much as possible :)
 
 
 
