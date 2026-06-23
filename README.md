@@ -102,7 +102,8 @@ I
 ## Dancing girl widget(idk if anyone wants this :P)
 
 
-Either upload the GIF, pciture or video to a gihub repo and copying its adress, and then pasting it in the box or do the more stupid route. so the copied adress would look something like this "https://raw.githubusercontent.com/Raikuzurenko/Vivaldi-widgets-/d1c3b477afd0d69901ac487e4e80cfd0cd5ca9ca/vivaldi_dark/readme_ss/dance.gif" You could technically just use the adress pasted here but I don't gurantee the GIF uploaded till the end of time, so yea :P
+Either upload the GIF, pciture or video to a gihub repo and copying its address, and then paste it in the box  in vivaldi or do the more stupid route. 
+The copied adress would look something like this "https://raw.githubusercontent.com/Raikuzurenko/Vivaldi-widgets-/d1c3b477afd0d69901ac487e4e80cfd0cd5ca9ca/vivaldi_dark/readme_ss/dance.gif" You could technically just use the adress pasted here but I don't gurantee the GIF being uploaded till the end of time, so yea :P
 
 
 #### The stupid route:
